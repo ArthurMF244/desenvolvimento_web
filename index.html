@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpDesk Unimed Meio Oeste</title>
+    <meta name="description" content="Interface inicial do sistema web de chamados internos HelpDesk Unimed Meio Oeste.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header" id="topo">
+        <nav class="navbar container" aria-label="Menu principal">
+            <a class="brand" href="#inicio" aria-label="HelpDesk Unimed Meio Oeste - Início">
+                <span class="brand-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img">
+                        <path d="M12 3.2c-3.1 0-5.7 2.3-6.1 5.3A5.9 5.9 0 0 0 6 20.3h4.2v-4H6.1a3.5 3.5 0 0 1-.1-7 6 6 0 0 1 11.9 0h.1a3.5 3.5 0 0 1-.1 7h-4.1v4H18a5.9 5.9 0 0 0 .1-11.8A6.1 6.1 0 0 0 12 3.2Z"/>
+                        <path d="M11 9h2v3h3v2h-3v3h-2v-3H8v-2h3V9Z"/>
+                    </svg>
+                </span>
+                <span>HelpDesk Unimed Meio Oeste</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="menu-links">
+                <a href="#inicio">Início</a>
+                <a href="#solucao">Solução</a>
+                <a href="#funcionalidades">Funcionalidades</a>
+                <a href="#fluxo">Fluxo do chamado</a>
+                <a href="#painel">Painel</a>
+                <a href="#contato">Contato</a>
+                <a class="btn btn-primary btn-small" href="#contato">Abrir chamado</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow">Suporte interno hospitalar</span>
+                    <h1>Controle interno de chamados com mais organização, agilidade e transparência.</h1>
+                    <p>Uma plataforma visual para centralizar solicitações internas, acompanhar prazos, organizar responsáveis e melhorar o atendimento entre setores.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#contato">Abrir chamado</a>
+                        <a class="btn btn-secondary" href="#funcionalidades">Ver funcionalidades</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-mockup" aria-label="Prévia visual do painel de chamados">
+                    <div class="mockup-header">
+                        <div>
+                            <strong>Painel do HelpDesk</strong>
+                            <span>Visão operacional</span>
+                        </div>
+                        <span class="live-dot">Online</span>
+                    </div>
+                    <div class="mockup-cards">
+                        <article><span>Chamados abertos</span><strong>32</strong></article>
+                        <article><span>Em atendimento</span><strong>18</strong></article>
+                        <article><span>Atrasados</span><strong>5</strong></article>
+                        <article><span>Finalizados hoje</span><strong>9</strong></article>
+                    </div>
+                    <div class="mockup-list">
+                        <div><span></span><p>Sistema indisponível no setor</p><b>Alta</b></div>
+                        <div><span></span><p>Configuração de impressora</p><b>Média</b></div>
+                        <div><span></span><p>Solicitação de acesso</p><b>Alta</b></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="problema">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">O problema</span>
+                    <h2>Demandas internas precisam de rastreabilidade e prioridade clara.</h2>
+                    <p>Quando cada setor registra pedidos por canais diferentes, o acompanhamento fica frágil e a tomada de decisão perde velocidade.</p>
+                </div>
+                <div class="card-grid five-grid">
+                    <article class="info-card"><span class="card-icon">✉</span><h3>Solicitações espalhadas</h3><p>Mensagens, ligações e e-mails dificultam a organização das demandas.</p></article>
+                    <article class="info-card"><span class="card-icon">▣</span><h3>Falta de histórico</h3><p>Sem registros centralizados, o contexto dos atendimentos se perde.</p></article>
+                    <article class="info-card"><span class="card-icon">⏱</span><h3>Prazos confusos</h3><p>O acompanhamento manual torna mais difícil prevenir atrasos.</p></article>
+                    <article class="info-card"><span class="card-icon">◉</span><h3>Baixa visibilidade</h3><p>Status e responsáveis nem sempre ficam claros para todos os envolvidos.</p></article>
+                    <article class="info-card"><span class="card-icon">↻</span><h3>Retrabalho</h3><p>Setores podem repetir tarefas por falta de comunicação integrada.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-soft" id="solucao">
+            <div class="container solution-layout">
+                <div class="section-heading align-left">
+                    <span class="eyebrow">A solução</span>
+                    <h2>Um fluxo único para registrar, acompanhar e resolver chamados internos.</h2>
+                    <p>O HelpDesk Unimed Meio Oeste organiza a rotina de atendimento com informações visuais, indicadores e base para futuras funcionalidades de CRUD.</p>
+                </div>
+                <div class="solution-grid">
+                    <article><strong>01</strong><span>Centralização dos chamados</span></article>
+                    <article><strong>02</strong><span>Acompanhamento por status</span></article>
+                    <article><strong>03</strong><span>Controle de SLA e prazos</span></article>
+                    <article><strong>04</strong><span>Histórico de movimentações</span></article>
+                    <article><strong>05</strong><span>Priorização por urgência</span></article>
+                    <article><strong>06</strong><span>Organização por setor, categoria e responsável</span></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="funcionalidades">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Funcionalidades</span>
+                    <h2>Recursos previstos para a evolução do sistema.</h2>
+                    <p>Esta primeira versão apresenta a experiência visual e antecipa os módulos que podem ser implementados nas próximas etapas.</p>
+                </div>
+                <div class="feature-grid">
+                    <article>Abertura de chamados</article><article>Classificação por categoria</article><article>Definição de prioridade</article><article>Atribuição de responsável</article><article>Controle de SLA</article>
+                    <article>Histórico de movimentações</article><article>Anexos no chamado</article><article>Avaliação do atendimento</article><article>Dashboard gerencial</article><article>Filtros por status, setor e período</article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-soft" id="fluxo">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Fluxo do chamado</span>
+                    <h2>Do registro à finalização, cada etapa ganha contexto.</h2>
+                </div>
+                <div class="timeline">
+                    <article><span>1</span><h3>Solicitante abre</h3><p>O colaborador descreve a necessidade e informa setor, categoria e prioridade.</p></article>
+                    <article><span>2</span><h3>Sistema registra</h3><p>A solicitação recebe número, data e status inicial para acompanhamento.</p></article>
+                    <article><span>3</span><h3>Responsável assume</h3><p>Um atendente ou equipe é vinculado ao atendimento.</p></article>
+                    <article><span>4</span><h3>Em atendimento</h3><p>As movimentações indicam o progresso da solução.</p></article>
+                    <article><span>5</span><h3>Solução informada</h3><p>A resposta técnica ou administrativa é registrada no histórico.</p></article>
+                    <article><span>6</span><h3>Solicitante avalia</h3><p>O atendimento pode receber uma avaliação para apoiar melhorias.</p></article>
+                    <article><span>7</span><h3>Finalização</h3><p>O chamado é encerrado com status e registros completos.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="painel">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Painel demonstrativo</span>
+                    <h2>Indicadores e chamados recentes em uma única visão.</h2>
+                </div>
+                <div class="panel">
+                    <div class="stats-grid">
+                        <article><span>32</span><p>chamados abertos</p></article>
+                        <article><span>18</span><p>em atendimento</p></article>
+                        <article><span>5</span><p>atrasados</p></article>
+                        <article><span>47</span><p>finalizados no mês</p></article>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Nº</th><th>Solicitante</th><th>Setor</th><th>Categoria</th><th>Prioridade</th><th>Status</th></tr></thead>
+                            <tbody>
+                                <tr><td>#1024</td><td>Maria Souza</td><td>Enfermagem</td><td>Sistema</td><td>Alta</td><td><span class="badge badge-yellow">Em atendimento</span></td></tr>
+                                <tr><td>#1025</td><td>João Pereira</td><td>Recepção</td><td>Impressora</td><td>Média</td><td><span class="badge badge-blue">Aberto</span></td></tr>
+                                <tr><td>#1026</td><td>Ana Martins</td><td>Centro Cirúrgico</td><td>Acesso</td><td>Alta</td><td><span class="badge badge-red">Atrasado</span></td></tr>
+                                <tr><td>#1027</td><td>Lucas Oliveira</td><td>Farmácia</td><td>Computador</td><td>Baixa</td><td><span class="badge badge-green">Finalizado</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-soft" id="perfis">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Perfis de usuário</span>
+                    <h2>Visões diferentes para cada papel no atendimento.</h2>
+                </div>
+                <div class="profile-grid">
+                    <article class="profile-card"><span>S</span><h3>Solicitante</h3><p>Abre chamados e acompanha andamento.</p></article>
+                    <article class="profile-card"><span>A</span><h3>Atendente</h3><p>Assume chamados e registra movimentações.</p></article>
+                    <article class="profile-card"><span>G</span><h3>Gestor</h3><p>Acompanha indicadores, prazos e desempenho.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contato">
+            <div class="container contact-layout">
+                <div class="section-heading align-left">
+                    <span class="eyebrow">Simulação de abertura</span>
+                    <h2>Registre um chamado fictício para testar a interface.</h2>
+                    <p>O formulário valida os campos no navegador e exibe uma mensagem visual, sem enviar dados para servidor.</p>
+                </div>
+                <form class="ticket-form" id="ticket-form" novalidate>
+                    <div class="form-row"><label for="nome">Nome</label><input id="nome" name="nome" type="text" autocomplete="name"></div>
+                    <div class="form-row"><label for="setor">Setor</label><input id="setor" name="setor" type="text"></div>
+                    <div class="form-row"><label for="categoria">Categoria</label><select id="categoria" name="categoria"><option value="">Selecione</option><option>TI</option><option>Manutenção</option><option>Infraestrutura</option><option>Sistemas</option><option>Equipamentos</option><option>Acessos</option><option>Administrativo</option></select></div>
+                    <div class="form-row"><label for="prioridade">Prioridade</label><select id="prioridade" name="prioridade"><option value="">Selecione</option><option>Baixa</option><option>Média</option><option>Alta</option><option>Urgente</option></select></div>
+                    <div class="form-row full"><label for="descricao">Descrição do problema</label><textarea id="descricao" name="descricao" rows="5"></textarea></div>
+                    <p class="form-message" id="form-message" aria-live="polite"></p>
+                    <button class="btn btn-primary" type="submit">Registrar simulação</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div><strong>HelpDesk Unimed Meio Oeste</strong><p>Projeto acadêmico desenvolvido para a disciplina de Projeto de Aplicação Web.</p></div>
+            <div><span>Tecnologias</span><p>HTML, CSS e JavaScript</p></div>
+            <div><span>Ano</span><p id="current-year">2026</p></div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
