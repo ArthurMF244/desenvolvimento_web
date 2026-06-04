@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  si-chamados:
+    build: .
+    container_name: si-chamados
+    ports:
+      - "9000:80"
+    volumes:
+      - .:/var/www/html
+    restart: unless-stopped

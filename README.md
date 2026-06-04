@@ -1,60 +1,25 @@
-﻿# HelpDesk Unimed Meio Oeste
+# SI Chamados - Front-end
 
-Projeto front-end acadêmico para uma landing page/interface inicial de um sistema web de chamados internos chamado **HelpDesk Unimed Meio Oeste**.
+Projeto front-end para a Atividade Avaliativa 1.
 
-## Objetivo
+## Tema
+Sistema interno empresarial para controle de chamados entre áreas.
 
-Apresentar uma proposta visual de sistema para centralizar solicitações internas de suporte em ambiente hospitalar e corporativo, com foco em organização, acompanhamento de prazos, responsáveis, categorias e status dos chamados.
+## Tecnologias usadas
+- HTML
+- CSS
+- JavaScript
 
-Esta versão é apenas um protótipo front-end. Não possui back-end, banco de dados ou integração externa.
-
-## Tema escolhido
-
-O layout utiliza uma identidade visual limpa, moderna e profissional, inspirada em ambientes de saúde e gestão interna. A paleta combina verde, azul escuro, cinzas claros e branco para transmitir confiança, clareza e organização.
-
-## Tecnologias utilizadas
-
-- HTML5
-- CSS3
-- JavaScript puro
+## O que o projeto possui
+- Painel com indicadores
+- Listagem de chamados
+- Filtros por texto, status, área responsável e prioridade
+- Cadastro visual de novo chamado
+- Modal de detalhes
+- Alteração visual de status
+- Cálculo visual de SLA
+- Persistência no navegador usando localStorage
+- Tema claro/escuro
 
 ## Como executar
-
-Abra o arquivo `index.html` diretamente no navegador.
-
-Não é necessário instalar dependências, iniciar servidor local ou configurar banco de dados.
-
-## Seções da página
-
-- Header fixo com menu responsivo
-- Hero com chamada principal e mockup de dashboard
-- O problema
-- A solução
-- Funcionalidades futuras
-- Fluxo do chamado
-- Painel demonstrativo com indicadores e tabela
-- Perfis de usuário
-- Formulário visual de simulação de abertura de chamado
-- Footer com informações do projeto
-
-## Funcionalidades em JavaScript
-
-- Abertura e fechamento do menu mobile
-- Scroll suave pelos links de navegação
-- Validação simples do formulário
-- Mensagens visuais de erro e sucesso
-- Atualização automática do ano no rodapé
-
-## Evolução futura com CRUD
-
-Em uma próxima etapa, o projeto pode evoluir para um sistema com CRUD completo, incluindo:
-
-- Cadastro, edição, listagem e exclusão de chamados
-- Cadastro de categorias, setores e responsáveis
-- Histórico de movimentações por chamado
-- Filtros por status, setor, prioridade e período
-- Controle de SLA e prazos
-- Painel gerencial com dados reais
-- Autenticação por perfil de usuário
-
-Todos os dados usados nesta versão são fictícios.
+Abra o arquivo `index.html` no navegador.
