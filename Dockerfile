@@ -1,9 +1,9 @@
-FROM php:8.2-apache
+FROM httpd:2.4-alpine
 
-WORKDIR /var/www/html
+WORKDIR /usr/local/apache2/htdocs
 
-COPY . /var/www/html/
-
-RUN chown -R www-data:www-data /var/www/html
+COPY *.html ./
+COPY css ./css
+COPY js ./js
 
 EXPOSE 80

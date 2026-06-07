@@ -1,11 +1,11 @@
-version: "3.8"
-
 services:
   si-chamados:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: si-chamados
     ports:
-      - "9000:80"
+      - "80:80"
     volumes:
-      - .:/var/www/html
+      - ./:/usr/local/apache2/htdocs:ro
     restart: unless-stopped

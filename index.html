@@ -3,64 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SI | Sistema Interno</title>
+  <title>SI | Chamados</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body>
   <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-icon">SI</div>
-
-        <div>
-          <strong>SI</strong>
-          <span>Sistema Interno</span>
-        </div>
-      </div>
-
-      <nav class="menu">
-        <a class="active" href="#">
-          <i class="fa-solid fa-ticket"></i>
-          Chamados
-        </a>
-
-        <a href="#">
-          <i class="fa-solid fa-chart-line"></i>
-          Painel
-        </a>
-
-        <a href="#">
-          <i class="fa-solid fa-building"></i>
-          Áreas
-        </a>
-
-        <a href="#">
-          <i class="fa-solid fa-chart-pie"></i>
-          Relatórios
-        </a>
-
-        <a href="#">
-          <i class="fa-solid fa-gear"></i>
-          Configurações
-        </a>
-      </nav>
-    </aside>
+    <div id="sidebarContainer"></div>
 
     <main class="content">
       <header class="topbar">
         <div>
-          <h1>Central de Chamados</h1>
+          <h1>Chamados área</h1>
         </div>
 
         <div class="topbar-actions">
-          <button class="btn ghost" id="btnToggleTheme" type="button">
-            <i class="fa-solid fa-moon"></i>
-            Tema
-          </button>
-
           <button class="btn primary" id="btnNovoChamado" type="button">
             <i class="fa-solid fa-plus"></i>
             Novo chamado
@@ -71,42 +30,29 @@
       <section class="metrics" aria-label="Indicadores de chamados">
         <article class="metric-card">
           <div class="metric-top">
-            <span class="metric-label">Chamados abertos</span>
+            <span class="metric-label">Abertos</span>
             <i class="fa-solid fa-folder-open"></i>
           </div>
 
           <strong id="kpiAbertos">0</strong>
-          <small>Solicitações aguardando ação</small>
         </article>
 
         <article class="metric-card">
           <div class="metric-top">
-            <span class="metric-label">Em atendimento</span>
+            <span class="metric-label">Em andamento</span>
             <i class="fa-solid fa-headset"></i>
           </div>
 
           <strong id="kpiAtendimento">0</strong>
-          <small>Com área responsável</small>
         </article>
 
         <article class="metric-card">
           <div class="metric-top">
-            <span class="metric-label">Aguardando retorno</span>
-            <i class="fa-solid fa-clock"></i>
+            <span class="metric-label">Finalizados</span>
+            <i class="fa-solid fa-circle-check"></i>
           </div>
 
-          <strong id="kpiAguardando">0</strong>
-          <small>Dependem de informação</small>
-        </article>
-
-        <article class="metric-card danger">
-          <div class="metric-top">
-            <span class="metric-label">SLA vencido</span>
-            <i class="fa-solid fa-triangle-exclamation"></i>
-          </div>
-
-          <strong id="kpiVencidos">0</strong>
-          <small>Precisam de atenção</small>
+          <strong id="kpiFinalizados">0</strong>
         </article>
       </section>
 
@@ -128,12 +74,13 @@
               <tr>
                 <th>Nº</th>
                 <th>Chamado</th>
-                <th>Área solicitante</th>
-                <th>Área responsável</th>
-                <th>Prioridade</th>
                 <th>Status</th>
-                <th>SLA</th>
-                <th>Ações</th>
+                <th>Prioridade</th>
+                <th>Data abertura</th>
+                <th>Solicitante</th>
+                <th>Responsáveis</th>
+                <th>Área sol.</th>
+                <th>Área resp.</th>
               </tr>
             </thead>
 
@@ -166,7 +113,7 @@
       <div class="filters-modal-body">
         <label>
           Buscar
-          <input id="filtroTexto" type="search" placeholder="Ex: impressora, sistema, acesso..." />
+          <input id="filtroTexto" type="search" />
         </label>
 
         <label>
@@ -239,12 +186,9 @@
 
         <label>
           Solicitante *
-          <input id="solicitante" type="text" placeholder="Nome do colaborador" required />
-        </label>
-
-        <label>
-          E-mail
-          <input id="email" type="email" placeholder="usuario@empresa.com.br" />
+          <select id="solicitante" required>
+            <option value="">Selecione</option>
+          </select>
         </label>
 
         <label>
@@ -269,6 +213,13 @@
             <option>Financeiro</option>
             <option>Recursos Humanos</option>
             <option>Compras</option>
+          </select>
+        </label>
+
+        <label>
+          Responsável
+          <select id="responsavel">
+            <option value="">Sem responsável</option>
           </select>
         </label>
 
@@ -305,19 +256,9 @@
           </select>
         </label>
 
-        <label>
-          Origem
-          <select id="origem">
-            <option>Portal SI</option>
-            <option>Telefone</option>
-            <option>E-mail</option>
-            <option>Presencial</option>
-          </select>
-        </label>
-
         <label class="full">
           Descrição *
-          <textarea id="descricao" rows="5" placeholder="Descreva o problema, quando começou, telas envolvidas e o que já foi tentado..." required></textarea>
+          <textarea id="descricao" rows="5" required></textarea>
         </label>
 
         <div class="upload-box full">
@@ -348,25 +289,8 @@
     </div>
   </div>
 
-  <div class="drawer-backdrop" id="drawerDetalhes" aria-hidden="true">
-    <aside class="drawer">
-      <div class="drawer-header">
-        <div>
-          <span class="eyebrow">Detalhes</span>
-          <h2 id="detalheTitulo">Chamado</h2>
-        </div>
-
-        <button class="icon-btn" id="btnFecharDrawer" type="button" aria-label="Fechar detalhes">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <div id="detalheConteudo"></div>
-    </aside>
-  </div>
-
   <div class="toast" id="toast"></div>
-
-  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
