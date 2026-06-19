@@ -1,44 +1,99 @@
-# SI Chamados - Front-end
+# SI Chamados
 
-Projeto front-end para controle interno de chamados entre áreas.
+Sistema de chamados em PHP 8.2, Apache e MySQL 8, preparado para execução com Docker Compose.
 
-## Tecnologias usadas
-- HTML
-- CSS
-- JavaScript
-- Docker
-
-## O que o projeto possui
-- Painel com indicadores
-- Listagem de chamados
-- Filtros por texto, status, área responsável e prioridade
-- Cadastro visual de novo chamado
-- Tela de detalhes do chamado
-- Alteração visual de status
-- Persistência no navegador usando localStorage
-- Tema claro/escuro
-
-## Organização
-- `index.html` usa `css/index.css` e `js/index.js`
-- `chamado.html` usa `css/chamado.css` e `js/chamado.js`
-- `atribuidos.html` usa `css/atribuidos.css` e `js/atribuidos.js`
-- `meus-chamados.html` usa `css/meus-chamados.css` e `js/meus-chamados.js`
-- `usuarios.html` usa `css/usuarios.css` e `js/usuarios.js`
-- `indicadores.html` usa `css/indicadores.css` e `js/indicadores.js`
-- `relatorios.html` usa `css/relatorios.css` e `js/relatorios.js`
-- `configuracoes.html` usa `css/configuracoes.css` e `js/configuracoes.js`
-- `css/base.css` guarda estilos compartilhados
-- `js/app.js` carrega os scripts compartilhados usados por todas as telas
-- `js/data.js` guarda dados e funções compartilhadas
-- `js/sidebar.js` guarda a sidebar e o perfil do usuário
-
-## Como executar com Docker
-```bash
-docker compose up --build
-```
-
-Depois acesse:
+## Estrutura
 
 ```text
-http://localhost
+api/          Endpoints JSON consumidos pelo JavaScript
+database/     Conexão PDO e executor de migrations
+docker/       Virtual host do Apache e entrypoint do container PHP
+migrations/   Scripts SQL executados em ordem
+public/       Páginas PHP, CSS e JavaScript públicos
+```
+
+O Apache usa `public/` como `DocumentRoot`. A pasta `api/` é publicada somente pelo alias `/api`; `database/` e `migrations/` não são acessíveis pelo navegador.
+
+## Executar
+
+```bash
+docker compose up -d --build
+```
+
+A aplicação ficará disponível em:
+
+```text
+http://localhost:8081
+```
+
+As portas padrão são configuráveis. Copie `.env.example` para `.env` e altere `APP_PORT` ou `MYSQL_PORT` se necessário.
+
+No PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+docker compose up -d --build
+```
+
+## Banco no DBeaver
+
+Com os valores padrão:
+
+```text
+Host: localhost
+Porta: 3308
+Database: si_chamados
+Usuário: si_chamados
+Senha: si_chamados
+```
+
+## Migrations
+
+Ao iniciar, o container PHP aguarda o MySQL ficar saudável e executa automaticamente:
+
+```bash
+php database/migrate.php
+```
+
+Cada arquivo `.sql` de `migrations/` é executado uma única vez e registrado na tabela `migrations`.
+
+Para executar manualmente:
+
+```bash
+docker compose exec php php database/migrate.php
+```
+
+Para criar uma migration, adicione um arquivo com numeração crescente, por exemplo:
+
+```text
+migrations/002_adicionar_sla.sql
+```
+
+## Comandos úteis
+
+```bash
+docker compose ps
+docker compose logs -f php
+docker compose down
+```
+
+Para apagar também todos os dados locais do MySQL e recriar o banco do zero:
+
+```bash
+docker compose down -v
+docker compose up -d --build
+```
+
+## Endpoints
+
+```text
+GET  /api/health.php
+GET  /api/usuarios.php
+POST /api/usuarios.php
+GET  /api/chamados.php
+GET  /api/chamados.php?id=1
+POST /api/chamados.php
+PUT  /api/chamados.php?id=1
+GET  /api/configuracoes.php
+POST /api/configuracoes.php
 ```

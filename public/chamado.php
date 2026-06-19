@@ -14,7 +14,7 @@
     <div id="sidebarContainer"></div>
 
     <main class="content">
-      <a class="back-link" href="index.html">
+      <a class="back-link" href="index.php">
         <i class="fa-solid fa-arrow-left"></i>
         Voltar
       </a>
