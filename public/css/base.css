@@ -652,16 +652,18 @@ textarea:focus {
 
 @media (max-width: 980px) {
   .app-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: 220px minmax(0, 1fr);
   }
 
   .sidebar-collapsed .app-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: 78px minmax(0, 1fr);
   }
 
   .sidebar {
-    position: relative;
-    height: auto;
+    position: sticky;
+    left: 0;
+    height: 100vh;
+    padding: 18px;
   }
 
   .sidebar-collapsed .sidebar {
@@ -717,13 +719,53 @@ textarea:focus {
 }
 
 @media (max-width: 640px) {
+  .app-shell,
+  .sidebar-collapsed .app-shell {
+    grid-template-columns: 78px minmax(0, 1fr);
+  }
+
   h1 {
     font-size: 2rem;
   }
 
-  .content,
-  .sidebar {
+  .content {
     padding: 18px;
+  }
+
+  .sidebar,
+  .sidebar-collapsed .sidebar {
+    padding: 14px 10px;
+  }
+
+  .brand-text,
+  .menu-label,
+  .submenu,
+  .submenu-arrow,
+  .user-info,
+  .user-arrow,
+  .sidebar-collapsed .brand-text,
+  .sidebar-collapsed .menu-label,
+  .sidebar-collapsed .submenu,
+  .sidebar-collapsed .submenu-arrow,
+  .sidebar-collapsed .user-info,
+  .sidebar-collapsed .user-arrow {
+    display: none;
+  }
+
+  .brand,
+  .sidebar-collapsed .brand {
+    flex-direction: column;
+  }
+
+  .brand-main,
+  .sidebar-collapsed .brand-main,
+  .menu a,
+  .menu-parent,
+  .sidebar-user,
+  .sidebar-collapsed .menu a,
+  .sidebar-collapsed .menu-parent,
+  .sidebar-collapsed .sidebar-user {
+    justify-content: center;
   }
 
   .full {

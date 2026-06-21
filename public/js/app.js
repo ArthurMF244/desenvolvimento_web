@@ -71,7 +71,7 @@ function openModal(selector) {
   const modal = $(selector);
   if (!modal) return;
   modal.setAttribute('aria-hidden', 'false');
-  modal.style.display = 'flex';
+  modal.style.removeProperty('display');
   modal.classList.add('show', 'active', 'open');
 }
 
@@ -80,7 +80,7 @@ function closeModal(selector) {
   if (!modal) return;
   modal.setAttribute('aria-hidden', 'true');
   modal.classList.remove('show', 'active', 'open');
-  modal.style.display = 'none';
+  modal.style.removeProperty('display');
 }
 
 function applyTheme(theme) {
